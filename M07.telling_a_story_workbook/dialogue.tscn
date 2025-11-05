@@ -65,6 +65,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.80500007
@@ -80,6 +81,7 @@ text = "hello
 "
 
 [node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.026
