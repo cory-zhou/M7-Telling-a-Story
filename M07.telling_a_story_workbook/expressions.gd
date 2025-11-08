@@ -8,6 +8,7 @@ extends Control
 @onready var button_sad: Button = %ButtonSad
 @onready var button_happy: Button = %ButtonHappy
 
+
 var bodies := {
 	"sophia": preload("res://assets/sophia.png"),
 	"pink": preload("res://assets/pink.png")
