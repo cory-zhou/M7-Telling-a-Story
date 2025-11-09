@@ -7,12 +7,37 @@ extends Control
 
 
 var dialogue_items: Array [String] = [
-	"I'm learning about Arrays...",
-	"...and it is a little bit complicated.",
-	"Let's see if I got it right: an array is a list of values!",
-	"Did I get it right? Did I?",
-	"Hehe! Bye bye~!"
+	"sword",
+	"potion",
+	"potion",
+	"ring",
+	"ring",
 ]
+
+var inventory: Array[Dictionary] = [
+	{
+		"name": "sword",
+		"amount": 1,
+	},
+	{
+		"name": "potion",
+		"amount": 5,
+	},
+	{
+		"name": "potion",
+		"amount": 3,
+	},
+	{
+		"name": "coins",
+		"amount": 65,
+	},
+]
+
+var exptression :={
+	"happy":preload("res://assets/emotion_happy.png"),
+	"regular":preload("res://assets/emotion_regular.png"),
+	"sad":preload("res://assets/emotion_sad.png"),
+	}
 
 var current_item_index := 0
 
@@ -22,6 +47,8 @@ func _ready() -> void:
 
 func show_text()-> void:
 	var current_item := dialogue_items[current_item_index]
+	var rich_text_label.text = current_item["text"]
+	expression.texture = current_item["expression"]
 	rich_text_label.text = current_item
 	rich_text_label.visible_ratio = 0.0
 	var tween := create_tween()
