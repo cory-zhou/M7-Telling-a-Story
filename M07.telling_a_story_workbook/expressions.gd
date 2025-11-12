@@ -36,3 +36,11 @@ func create_buttons() -> void:
 		button.pressed.connect(func() -> void:
 			body.texture = bodies[current_body]
 		)
+		
+	for current_expression: String in expressions:
+		var button := Button.new()
+		row_expressions.add_child(button)
+		button.text = current_expression.capitalize()
+		button.pressed.connect(func() -> void:
+			expression.texture = expressions[current_expression]
+		)

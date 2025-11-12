@@ -1,10 +1,10 @@
+AudioStreamPlayer
 Button
+RichTextLabel
 CheckButton
 HBoxContainer
 VBoxContainer
-AudioStreamPlayer
 AudioStreamPlayer2D
-RichTextLabel
 TextureRect
 ColorRect
 Control
