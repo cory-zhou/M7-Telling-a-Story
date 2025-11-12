@@ -12,6 +12,11 @@ var expressions :={
 	"sad": preload("res://assets/emotion_sad.png"),
 }
 
+var bodies := {
+	"sophia": preload ("res://assets/sophia.png"),
+	"pink": preload ("res://assets/pink.png")
+}
+
 var dialogue_items: Array[Dictionary] = [
 	{
 		"expression": expressions["regular"],
@@ -33,9 +38,12 @@ var dialogue_items: Array[Dictionary] = [
 		"expression": expressions["happy"],
 		"text": "Hehe! Bye bye~!",
 	},
+	{
+		"expression": expressions["regular"],
+		"text": "I've been studying arrays and dictionaries lately.",
+		"character": bodies["sophia"],
+	},
 ]
-
-
 
 
 var current_item_index := 0
