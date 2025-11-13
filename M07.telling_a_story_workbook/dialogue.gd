@@ -20,27 +20,42 @@ var bodies := {
 var dialogue_items: Array[Dictionary] = [
 	{
 		"expression": expressions["regular"],
-		"text": "I'm learning about Arrays...",
+		"text": "I've been studying arrays and dictionaries lately.",
+		"character": bodies["sophia"],
+	},
+	{
+		"expression": expressions["regular"],
+		"text": "Oh, nice. How has it been going?",
+		"character": bodies["pink"],
 	},
 	{
 		"expression": expressions["sad"],
-		"text": "... and it is a little bit complicated.",
+		"text": "Well... it's a little complicated!",
+		"character": bodies["sophia"],
 	},
 	{
-		"expression": expressions["happy"],
-		"text": "Let's see if I got it right: an array is a list of values!",
-	},
-	{
-		"expression": expressions["regular"],
-		"text": "Did I get it right? Did I?",
-	},
-	{
-		"expression": expressions["happy"],
-		"text": "Hehe! Bye bye~!",
+		"expression": expressions["sad"],
+		"text": "Oh!",
+		"character": bodies["pink"],
 	},
 	{
 		"expression": expressions["regular"],
-		"text": "I've been studying arrays and dictionaries lately.",
+		"text": "It sure takes time to click at first.",
+		"character": bodies["pink"],
+	},
+	{
+		"expression": expressions["happy"],
+		"text": "If you keep at it, eventually, you'll get the hang of it!",
+		"character": bodies["pink"],
+	},
+	{
+		"expression": expressions["regular"],
+		"text": "Mhhh... I see. I'll keep at it, then.",
+		"character": bodies["sophia"],
+	},
+	{
+		"expression": expressions["happy"],
+		"text": "Thanks for the encouragement. Time to LEARN!!!",
 		"character": bodies["sophia"],
 	},
 ]
@@ -56,9 +71,10 @@ func show_text()-> void:
 	var current_item := dialogue_items[current_item_index]
 	rich_text_label.text = current_item["text"]
 	expression.texture = current_item["expression"]
+	body.texture = current_item["character"]
 	rich_text_label.visible_ratio = 0.0
 	var tween := create_tween()
-	var text_appearing_duration := 1.2
+	var text_appearing_duration: float = current_item["text"].length() / 30.0
 	tween.tween_property(rich_text_label, "visible_ratio", 1, text_appearing_duration)
 	var sound_max_offset := audio_stream_player.stream.get_length() - text_appearing_duration
 	var sound_start_position := randf() * sound_max_offset
